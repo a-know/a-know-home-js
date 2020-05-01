@@ -1,7 +1,17 @@
 import Head from 'next/head'
 import Layout from '../components/layout'
+import { getContentsData } from '../lib/contents'
 
-export default function Home() {
+export async function getStaticProps() {
+  const contactsData = getContentsData('contacts')
+  return {
+    props: {
+      contactsData
+    }
+  }
+}
+
+export default function Home({ contactsData }) {
   return (
     <Layout>
       <Head>
@@ -49,14 +59,9 @@ export default function Home() {
                   </div>
                   <div className="col-sm-9">
                     <ul>
-                      <li>Twitter: <a href="https://twitter.com/#!/a_know" target="_blank">@a_know</a></li>
-                      <li>GitHub: <a href="https://github.com/a-know" target="_blank">GitHub - a-know</a></li>
-                      <li>ask.fm: <a href="http://ask.fm/a_know" target="_blank">Ask to a-know</a></li>
-                      <li>Blog: <a href="https://blog.a-know.me/" target="_blank">えいのうにっき</a></li>
-                      <li>slideshare: <a href="http://www.slideshare.net/aknow3373" target="_blank">a-know's presentation</a></li>
-                      <li>photograph: <a href="http://photos.a-know.me/" target="_blank">えいのうふぉと</a></li>
-                      <li>Hatena: <a href="http://profile.hatena.ne.jp/a-know/" target="_blank">id:a-know</a></li>
-                      <li>Twitter favs: <a href="http://favs.a-know.me" target="_blank">えいのうふぁぼ</a></li>
+                      {contactsData.map(([ contactBy, url, text ]) => (
+                        <li>{contactBy}: <a href={url} target="_blank">{text}</a></li>
+                      ))}
                     </ul>
                   </div>
                 </div>
