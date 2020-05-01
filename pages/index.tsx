@@ -24,7 +24,7 @@ export default function Home() {
             <img src="/img/icon_big.png" alt="my icon" className="img-shadow" />
           </div>
           <div className="wrapper">
-            <section className="split-image parallax" data-background="/img/wall.jpg">
+            <section className="split-image parallax">
               <div className="split-image-footer">
                 <ul className="split-list">
                   <li>2008-08-24 岡山県笠岡市カブト南町の笠岡湾干拓地にて撮影</li>
