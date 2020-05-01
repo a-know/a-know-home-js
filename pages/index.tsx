@@ -4,16 +4,25 @@ export default function Home() {
   return (
     <div className="container">
       <Head>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="a-know／いのうえ のポートフォリオページ兼ポータルページ。自己紹介も兼ねています。" />
+        <meta name="author" content="a-know／いのうえ" />
         <title>a-know-home | a-know's Resume / Portfolio page</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="assets/images/apple-touch-icon-72x72.png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="assets/images/apple-touch-icon-114x114.png" />
+        <link href="https://fonts.googleapis.com/css?family=Suranna" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css" />
       </Head>
 
       <main>
         <div className="show-menu-btn">
-    			<img src="img/home/icon_big.png" alt="my icon" className="img-shadow" />
+    			<img src="/img/icon_big.png" alt="my icon" className="img-shadow" />
         </div>
         <div className="wrapper">
-          <section className="split-image parallax" data-background="assets/images/wall.jpg">
+          <section className="split-image parallax" data-background="/img/wall.jpg">
             <div className="split-image-footer">
               <ul className="split-list">
                 <li>2008-08-24 岡山県笠岡市カブト南町の笠岡湾干拓地にて撮影</li>
