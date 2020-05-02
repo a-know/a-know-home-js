@@ -3,22 +3,25 @@ import Layout from '../components/layout'
 import Contacts from '../components/contacts'
 import Careers from '../components/careers'
 import Qualifications from '../components/qualifications'
+import Activities from '../components/activities'
 import { getContentsData } from '../lib/contents'
 
 export async function getStaticProps() {
   const contactsData = getContentsData('contacts')
   const careersData = getContentsData('careers')
   const qualificationsData = getContentsData('qualifications')
+  const activitiesData = getContentsData('activities')
   return {
     props: {
       contactsData,
       careersData,
-      qualificationsData
+      qualificationsData,
+      activitiesData
     }
   }
 }
 
-export default function Home({ contactsData, careersData, qualificationsData }) {
+export default function Home({ contactsData, careersData, qualificationsData, activitiesData }) {
   return (
     <Layout>
       <Head>
@@ -98,18 +101,7 @@ export default function Home({ contactsData, careersData, qualificationsData }) 
                     <div className="row">
                       <div className="col-sm-12">
                         <ul className="service-list">
-                          <li>2020/02：<a href="https://speakerdeck.com/daisukeinoue/how-to-write-mackerel-blog-article" target="_blank">登壇 ＠ テックブログカンファレンス</a></li>
-                          <li>2019/11：<a href="https://blog.a-know.me/entry/2019/11/03/101733" target="_blank">登壇 ＠ Developers.IO 2019 in Okayama</a></li>
-                          <li>2019/09：<a href="https://connpass.com/event/142594/" target="_blank">登壇 ＠ ノベルティカンファレンス 2019 in 大阪</a></li>
-                          <li>2019/08：<a href="https://blog.a-know.me/entry/2019/08/31/191108" target="_blank">出展 ＠ builderscon 2019 見本市</a></li>
-                          <li>2019/03：<a href="https://dev.classmethod.jp/news/190315-mackarel-devops-hatena/" target="_blank">講師 ＠ 実践DevOpsハンズオン 〜AWSとMackerelで構築する安心・安全なDevOps環境〜</a></li>
-                          <li>2019/03：<a href="https://speakerdeck.com/daisukeinoue/introducing-mackerel-cre" target="_blank">登壇 ＠ クラウドサポートエンジニア Recruiting Day</a></li>
-                          <li>2018/12：<a href="https://www.slideshare.net/aknow3373/api-pixela-126504787" target="_blank">登壇 ＠ 合同勉強会 in 大都会岡山 -2018 Winter-</a></li>
-                          <li>2018/12：<a href="https://dev.classmethod.jp/news/mackarel-devops-hatena-20181210/" target="_blank">講師 ＠ 実践DevOpsハンズオン 〜AWSとMackerelで構築する安心・安全なDevOps環境〜</a></li>
-                          <li>2018/12：<a href="https://blog.a-know.me/entry/2018/12/02/151113" target="_blank">受賞 ＠ Mashup Awards - API部門賞</a></li>
-                          <li>2018/07：<a href="https://speakerdeck.com/daisukeinoue/support-engineer-night3-mackerel" target="_blank">登壇 ＠ サポートエンジニアNight vol.3</a></li>
-                          <li>2018/03：<a href="https://justsystems.doorkeeper.jp/events/70884" target="_blank">登壇 ＠ JustTechTalk #11</a></li>
-                          <li>2018/02：<a href="https://blog.a-know.me/entry/2018/02/16/231834" target="_blank">登壇 ＠ Developers Summit 2018</a></li>
+                          <Activities activitiesData={activitiesData} />
                           <details>
                             <summary>2017年以前</summary>
                             <li>2017/12：<a href="https://speakerdeck.com/daisukeinoue/gbdaitokai-2017" target="_blank">登壇 ＠ 合同勉強会 in 大都会岡山 -2017 Winter-</a></li>
