@@ -6,6 +6,7 @@ import Qualifications from '../components/qualifications'
 import Activities from '../components/activities'
 import OldActivities from '../components/oldActivities'
 import Developments from '../components/developments'
+import Summary from '../components/summary'
 import { getContentsData } from '../lib/contents'
 
 export async function getStaticProps() {
@@ -15,6 +16,7 @@ export async function getStaticProps() {
   const activitiesData = getContentsData('activities')
   const oldActivitiesData = getContentsData('oldActivities')
   const developmentsData = getContentsData('developments')
+  const summaryData = getContentsData('summary')
   return {
     props: {
       contactsData,
@@ -22,12 +24,13 @@ export async function getStaticProps() {
       qualificationsData,
       activitiesData,
       oldActivitiesData,
-      developmentsData
+      developmentsData,
+      summaryData
     }
   }
 }
 
-export default function Home({ contactsData, careersData, qualificationsData, activitiesData, oldActivitiesData, developmentsData }) {
+export default function Home({ contactsData, careersData, qualificationsData, activitiesData, oldActivitiesData, developmentsData, summaryData }) {
   return (
     <Layout>
       <Head>
@@ -73,14 +76,7 @@ export default function Home({ contactsData, careersData, qualificationsData, ac
                   <div className="col-sm-3">
                     <h6>Summary</h6>
                   </div>
-                  <div className="col-sm-9">
-                      <ul>
-                          <li>共著：<a href="https://www.amazon.co.jp/dp/4774192139" target="_blank">Mackerel サーバ監視[実践]入門</a></li>
-                          <li>受賞：<a href="https://blog.a-know.me/entry/2018/12/02/151113" target="_blank">Mashup Awards 2018（API部門賞）</a></li>
-                          <li>登壇：<a href="https://blog.a-know.me/entry/2018/02/16/231834" target="_blank">Developers Summit 2018</a></li>
-                          <li>出展：<a href="https://blog.a-know.me/entry/2019/08/31/191108" target="_blank">builderscon 2019 見本市</a></li>
-                      </ul>
-                  </div>
+                  <Summary summaryData={summaryData} />
                 </div>
               </div>
             </section>
