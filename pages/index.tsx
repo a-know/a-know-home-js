@@ -92,27 +92,6 @@ export default function Home({ contactsData, careersData, qualificationsData }) 
               <div className="container-fluid container-custom">
                 <div className="row">
                   <div className="col-sm-3">
-                    <h6>Work</h6>
-                  </div>
-                  <div className="col-sm-9">
-                    <div className="row">
-                      <div className="col-sm-12">
-                        <ul className="service-list">
-                          <li>随時：<a href="https://mackerelio.connpass.com/" target="_blank">担当プロダクト ハンズオンセミナー講師</a></li>
-                          <li>随時：<a href="https://mackerel.io/blog/" target="_blank">担当プロダクト 公式ブログ更新</a></li>
-                          <li>随時：<a href="https://mackerel.io/docs/" target="_blank">担当プロダクト ヘルプ作成・メンテナンス</a></li>
-                          <li>2017/08：<a href="http://developer.hatenastaff.com/entry/2017/08/09/173607" target="_blank">新職種立ち上げ（セールスエンジニア -> CRE）</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-            <section className="module">
-              <div className="container-fluid container-custom">
-                <div className="row">
-                  <div className="col-sm-3">
                     <h6>Activities and Achievements</h6>
                   </div>
                   <div className="col-sm-9">
