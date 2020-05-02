@@ -62,7 +62,7 @@ export default function Home({ contactsData, careersData, qualificationsData, ac
                 <div className="row">
                   <div className="col-sm-12">
                     <h1>ID : a-know 's Portfolio site</h1>
-                    <p>元ソフトウェアエンジニア / スクラムマスター。現・Customer Reliability Engineer (CRE)。<br /><br />だれかの助けになるようなことに自分の経験を活かしていきたいし、『インターネットの一部となるようなものをつくること』もずっとつづけていきたい。</p>
+                    <p>だれかの助けになるようなことに自分の経験を活かしていきたいし、『インターネットの一部となるようなものをつくること』もずっとつづけていきたい。</p>
                   </div>
                 </div>
               </div>
