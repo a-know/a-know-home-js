@@ -5,6 +5,7 @@ import Careers from '../components/careers'
 import Qualifications from '../components/qualifications'
 import Activities from '../components/activities'
 import OldActivities from '../components/oldActivities'
+import Developments from '../components/developments'
 import { getContentsData } from '../lib/contents'
 
 export async function getStaticProps() {
@@ -13,18 +14,20 @@ export async function getStaticProps() {
   const qualificationsData = getContentsData('qualifications')
   const activitiesData = getContentsData('activities')
   const oldActivitiesData = getContentsData('oldActivities')
+  const developmentsData = getContentsData('developments')
   return {
     props: {
       contactsData,
       careersData,
       qualificationsData,
       activitiesData,
-      oldActivitiesData
+      oldActivitiesData,
+      developmentsData
     }
   }
 }
 
-export default function Home({ contactsData, careersData, qualificationsData, activitiesData, oldActivitiesData }) {
+export default function Home({ contactsData, careersData, qualificationsData, activitiesData, oldActivitiesData, developmentsData }) {
   return (
     <Layout>
       <Head>
@@ -119,27 +122,7 @@ export default function Home({ contactsData, careersData, qualificationsData, ac
                   <div className="col-sm-3">
                     <h6>Hobby Development</h6>
                   </div>
-                  <div className="col-sm-9">
-                    <div className="row">
-                      <div className="col-sm-12">
-                        <ul className="service-list">
-                          <li>Web Service／<a href="https://inst.moshimo.works/" target="_blank">instrodux - instax mini Link x introduction</a></li>
-                          <li>Agent software／<a href="https://github.com/a-know/mackerel-remora" target="_blank">mackerel-remora</a></li>
-                          <li>CLI Tool／<a href="https://github.com/a-know/pi" target="_blank">Pi</a></li>
-                          <li>Web API Service／<a href="https://pixe.la" target="_blank">Pixela</a></li>
-                          <li>Web Service／<a href="https://blog.a-know.me/entry/2017/12/26/234528" target="_blank">Yukizuri</a></li>
-                          <li>CLI Tool／<a href="https://github.com/a-know/kabu" target="_blank">kabu</a></li>
-                          <li>heroku app／<a href="https://github.com/a-know/currentvisitor2mackerel" target="_blank">currentvisitor2mackerel</a></li>
-                          <li>heroku app／<a href="https://github.com/a-know/favs2blogposts" target="_blank">favs2blogposts</a></li>
-                          <li>Web Service／<a href="https://grass-graph.moshimo.works/" target="_blank">Grass-Graph</a></li>
-                          <li>Plugin／<a href="https://github.com/Shopify/dashing/wiki/Additional-Widgets" target="_blank">Custom Widget for dashing</a></li>
-                          <li>Web Service／<a href="https://blog.a-know.me/entry/2015/06/28/204359" target="_blank">Mikanz - ミカンズ</a></li>
-                          <li>Web Service／<a href="https://blog.a-know.me/entry/20120316/1331897972" target="_blank">Masterpiece</a></li>
-                          <li>Desktop app／<a href="http://d.hatena.ne.jp/a-know/20990331/" target="_blank">sa-boom!! client</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
+                  <Developments developmentsData={developmentsData} />
                 </div>
               </div>
             </section>
