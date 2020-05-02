@@ -4,6 +4,7 @@ import Contacts from '../components/contacts'
 import Careers from '../components/careers'
 import Qualifications from '../components/qualifications'
 import Activities from '../components/activities'
+import OldActivities from '../components/oldActivities'
 import { getContentsData } from '../lib/contents'
 
 export async function getStaticProps() {
@@ -11,17 +12,19 @@ export async function getStaticProps() {
   const careersData = getContentsData('careers')
   const qualificationsData = getContentsData('qualifications')
   const activitiesData = getContentsData('activities')
+  const oldActivitiesData = getContentsData('oldActivities')
   return {
     props: {
       contactsData,
       careersData,
       qualificationsData,
-      activitiesData
+      activitiesData,
+      oldActivitiesData
     }
   }
 }
 
-export default function Home({ contactsData, careersData, qualificationsData, activitiesData }) {
+export default function Home({ contactsData, careersData, qualificationsData, activitiesData, oldActivitiesData }) {
   return (
     <Layout>
       <Head>
@@ -102,27 +105,7 @@ export default function Home({ contactsData, careersData, qualificationsData, ac
                       <div className="col-sm-12">
                         <ul className="service-list">
                           <Activities activitiesData={activitiesData} />
-                          <details>
-                            <summary>2017年以前</summary>
-                            <li>2017/12：<a href="https://speakerdeck.com/daisukeinoue/gbdaitokai-2017" target="_blank">登壇 ＠ 合同勉強会 in 大都会岡山 -2017 Winter-</a></li>
-                            <li>2017/12：<a href="https://speakerdeck.com/daisukeinoue/hatena-mackerel-cs" target="_blank">登壇 ＠ GMO HosCon #14</a></li>
-                            <li>2017/10：<a href="https://speakerdeck.com/daisukeinoue/mackerel-with-cre" target="_blank">登壇 ＠ Mackerel DAY</a></li> 
-                            <li>2017/08：<a href="https://www.amazon.co.jp/dp/4774192139" target="_blank">共著 ＠ Mackerel サーバ監視[実践]入門</a></li>
-                            <li>2017/06：<a href="https://blog.a-know.me/entry/2017/06/06/004203" target="_blank">登壇 ＠ Customer Success Night #3</a></li>
-                            <li>2016/12：<a href="https://speakerdeck.com/daisukeinoue/sabajian-shi-sabisu-mackerel-insutoresiyonraibudemo" target="_blank">登壇 ＠ 合同勉強会 in 大都会岡山 2016 Winter</a></li>
-                            <li>2016/12：<a href="http://developer.hatenastaff.com/entry/2016/12/22/150000" target="_blank">LT 発表 ＠ Hatena Engineer Seminar #7</a></li>
-                            <li>2016/11：<a href="https://speakerdeck.com/daisukeinoue/zi-fen-zi-shen-falsejian-shi-moke-neng-mackerelfalsesahisumetorituku" target="_blank">LT 発表 ＠ Open Source Conference Tokyo 2016/Fall</a></li>
-                            <li>2016/10：<a href="https://speakerdeck.com/daisukeinoue/mackerel-falsegai-yao-karaxin-ji-neng-to-twilio-lian-xi-falsegoshao-jie" target="_blank">登壇 ＠ Twilio ビジネスセミナー Vol.31</a></li>
-                            <li>2016/08：<a href="http://developer.hatenastaff.com/entry/2016/09/02/170000" target="_blank">LT 発表 ＠ Hatena Engineer Seminar #6</a></li>
-                            <li>2016/06：<a href="http://www.slideshare.net/aknow3373/mackerel-standard-63046092" target="_blank">LT 発表 ＠ Mackerel User Group Meeting Vol.1</a></li>
-                            <li>2015/12：<a href="https://blog.a-know.me/entry/2015/12/05/234436" target="_blank">登壇 @ 合同勉強会 IN 大都会岡山 - 2015 WINTER</a></li>
-                            <li>2015/04：<a href="https://blog.a-know.me/entry/2015/04/13/191604" target="_blank">登壇 @ GCPUG イベント「AWS VS GCP」</a></li>
-                            <li>2014/08：<a href="https://blog.a-know.me/entry/2014/08/23/215024" target="_blank">講演・発表 @ 株式会社クレオフーガ </a></li>
-                            <li>2012/12：<a href="https://blog.a-know.me/entry/20121208/1354972898" target="_blank">ハッカソン優勝</a></li>
-                            <li>2012/07：<a href="http://www.slideshare.net/aknow3373/javafx-2x3java" target="_blank">登壇 @ 第3回 岡山 Java ユーザ会 勉強会</a></li>
-                            <li>2012/04：<a href="https://blog.a-know.me/entries/2012/04/22" target="_blank">登壇 @ 第13回 中国 GTUG 勉強会 </a></li>
-                            <li>2011/12, etc.：自作アプリケーションの雑誌掲載 <a href="https://blog.a-know.me/entry/20111206/1323185807" target="_blank">(1)</a> <a href="https://blog.a-know.me/entry/20100221/1266761121" target="_blank">(2)</a> <a href="https://blog.a-know.me/entry/20090613/1244878995" target="_blank">(3)</a></li>
-                          </details>
+                          <OldActivities oldActivitiesData={oldActivitiesData} />
                         </ul>
                       </div>
                     </div>
