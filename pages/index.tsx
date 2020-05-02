@@ -1,18 +1,21 @@
 import Head from 'next/head'
 import Layout from '../components/layout'
 import Contacts from '../components/contacts'
+import Careers from '../components/careers'
 import { getContentsData } from '../lib/contents'
 
 export async function getStaticProps() {
   const contactsData = getContentsData('contacts')
+  const careersData = getContentsData('careers')
   return {
     props: {
-      contactsData
+      contactsData,
+      careersData
     }
   }
 }
 
-export default function Home({ contactsData }) {
+export default function Home({ contactsData, careersData }) {
   return (
     <Layout>
       <Head>
@@ -68,19 +71,7 @@ export default function Home({ contactsData }) {
                   <div className="col-sm-3">
                     <h6>Employment and Education</h6>
                   </div>
-                  <div className="col-sm-9">
-                    <div className="row">
-                      <div className="col-sm-12">
-                        <ul className="service-list">
-                          <li>2016/07 - ：株式会社はてな</li>
-                          <li>2013/10 - 2016/06 ：株式会社フィードフォース</li>
-                          <li>2012/07 - 2013/09 ：株式会社CA Beat</li>
-                          <li>2006/04 - 2011/12 ：JFEシステムズ株式会社</li>
-                          <li>2004/04 - 2006/03 ：京都府立大学大学院</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
+                  <Careers careersData={careersData} />
                 </div>
               </div>
             </section>
