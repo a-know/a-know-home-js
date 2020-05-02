@@ -6,6 +6,7 @@ import Qualifications from '../components/qualifications'
 import Activities from '../components/activities'
 import OldActivities from '../components/oldActivities'
 import Developments from '../components/developments'
+import Summary from '../components/summary'
 import { getContentsData } from '../lib/contents'
 
 export async function getStaticProps() {
@@ -15,6 +16,7 @@ export async function getStaticProps() {
   const activitiesData = getContentsData('activities')
   const oldActivitiesData = getContentsData('oldActivities')
   const developmentsData = getContentsData('developments')
+  const summaryData = getContentsData('summary')
   return {
     props: {
       contactsData,
@@ -22,12 +24,13 @@ export async function getStaticProps() {
       qualificationsData,
       activitiesData,
       oldActivitiesData,
-      developmentsData
+      developmentsData,
+      summaryData
     }
   }
 }
 
-export default function Home({ contactsData, careersData, qualificationsData, activitiesData, oldActivitiesData, developmentsData }) {
+export default function Home({ contactsData, careersData, qualificationsData, activitiesData, oldActivitiesData, developmentsData, summaryData }) {
   return (
     <Layout>
       <Head>
@@ -62,11 +65,22 @@ export default function Home({ contactsData, careersData, qualificationsData, ac
                 <div className="row">
                   <div className="col-sm-12">
                     <h1>ID : a-know 's Portfolio site</h1>
-                    <p>元ソフトウェアエンジニア / スクラムマスター。現・Customer Reliability Engineer (CRE)。<br /><br />だれかの助けになるようなことに自分の経験を活かしていきたいし、『インターネットの一部となるようなものをつくること』もずっとつづけていきたい。</p>
+                    <p>だれかの助けになるようなことに自分の経験を活かしていきたいし、『インターネットの一部となるようなものをつくること』もずっとつづけていきたい。</p>
                   </div>
                 </div>
               </div>
             </section>
+            <section className="module">
+              <div className="container-fluid container-custom">
+                <div className="row">
+                  <div className="col-sm-3">
+                    <h6>Summary</h6>
+                  </div>
+                  <Summary summaryData={summaryData} />
+                </div>
+              </div>
+            </section>
+            <hr />
             <section className="module">
               <div className="container-fluid container-custom">
                 <div className="row">
