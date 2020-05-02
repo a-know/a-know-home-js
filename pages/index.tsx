@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Layout from '../components/layout'
+import Contacts from '../components/contacts'
 import { getContentsData } from '../lib/contents'
 
 export async function getStaticProps() {
@@ -57,13 +58,7 @@ export default function Home({ contactsData }) {
                   <div className="col-sm-3">
                     <h6>Contact by...</h6>
                   </div>
-                  <div className="col-sm-9">
-                    <ul>
-                      {contactsData.map(([ contactBy, url, text ]) => (
-                        <li>{contactBy}: <a href={url} target="_blank">{text}</a></li>
-                      ))}
-                    </ul>
-                  </div>
+                  <Contacts contactsData={contactsData} />
                 </div>
               </div>
             </section>
