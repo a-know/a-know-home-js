@@ -2,20 +2,23 @@ import Head from 'next/head'
 import Layout from '../components/layout'
 import Contacts from '../components/contacts'
 import Careers from '../components/careers'
+import Qualifications from '../components/qualifications'
 import { getContentsData } from '../lib/contents'
 
 export async function getStaticProps() {
   const contactsData = getContentsData('contacts')
   const careersData = getContentsData('careers')
+  const qualificationsData = getContentsData('qualifications')
   return {
     props: {
       contactsData,
-      careersData
+      careersData,
+      qualificationsData
     }
   }
 }
 
-export default function Home({ contactsData, careersData }) {
+export default function Home({ contactsData, careersData, qualificationsData }) {
   return (
     <Layout>
       <Head>
@@ -81,18 +84,7 @@ export default function Home({ contactsData, careersData }) {
                   <div className="col-sm-3">
                     <h6>Possession Qualification</h6>
                   </div>
-                  <div className="col-sm-9">
-                    <div className="row">
-                      <div className="col-sm-12">
-                        <ul className="service-list">
-                          <li>2019/10 : AWS ソリューションアーキテクト アソシエイト</li>
-                          <li>2012/11 : OCJ-P</li>
-                          <li>2010/12 : <a href="https://blog.a-know.me/entry/20101220/1292852517" target="_blank">情報セキュリティスペシャリスト</a></li>
-                          <li>2008/12 : <a href="https://blog.a-know.me/entry/20081215/1229350376" target="_blank">ソフトウェア開発技術者</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
+                  <Qualifications qualificationsData={qualificationsData} />
                 </div>
               </div>
             </section>
